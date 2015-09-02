@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-'use strict'
+'use strict';
 
 var Liftoff = require('liftoff');
 
@@ -12,8 +12,8 @@ console.log(require('./package'));
 
 //
 var cli = new Liftoff({
-  name: 'buh'
-})
+  name: 'buh',
+});
 
 var run = function() {
   console.log(argv);
@@ -21,5 +21,5 @@ var run = function() {
   cli.launch({}, function(env) {
     console.log(env);
   });
-}
+};
 module.exports = run;

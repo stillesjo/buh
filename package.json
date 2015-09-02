@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && lab -cv",
+    "lint": "jshint lib index.js --reporter node_modules/jshint-stylish --exclude node_modules && jscs index.js lib bin test"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,12 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "code": "^1.5.0",
+    "gulp": "^3.9.0",
+    "jscs": "^2.1.1",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "lab": "^5.16.0"
   },
   "bin": {
     "buh": "bin/buh.js"
