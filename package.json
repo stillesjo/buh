@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/stillesjo/buh#readme",
   "dependencies": {
-    "liftoff": "^2.1.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "mout": "^0.11.0"
   },
   "devDependencies": {
     "code": "^1.5.0",
