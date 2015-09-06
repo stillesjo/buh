@@ -4,4 +4,5 @@ Commands:
 
   help      Show this help text
   search    Search for repository on github.
+  
 

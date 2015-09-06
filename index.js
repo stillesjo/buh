@@ -10,6 +10,7 @@ var commands = require('./lib/commands');
 
 process.env.INIT_CWD = process.cwd();
 
+
 function help() {
   mout.object.get(commands, 'help')();
 }
