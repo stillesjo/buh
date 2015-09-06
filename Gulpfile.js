@@ -26,3 +26,4 @@ gulp.task('watch', ['test'], function() {
   }));
 });
 
+gulp.task('default', ['watch']);
