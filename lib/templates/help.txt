@@ -1,0 +1,7 @@
+Usage: buh <command> [<args>] [<options>]
+
+Commands:
+
+  help      Show this help text
+  search    Search for repository on github.
+
