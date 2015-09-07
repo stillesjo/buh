@@ -19,7 +19,7 @@ var run = function() {
   if (argv._ && argv._.length > 0) {
     var commandName = argv._.shift();
     if (mout.object.has(commands, commandName)) {
-      mout.object.get(commands, commandName)(config, request, argv._);
+      mout.object.get(commands, commandName)(config, request, argv);
     } else {
       help();
     }
