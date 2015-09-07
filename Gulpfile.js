@@ -5,6 +5,7 @@ var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 var jshint = require('gulp-jshint');
 var lab = require('gulp-lab');
+var jscs = require('gulp-jscs');
 
 var jsfiles = ['**/*.js', '!node_modules/**/*.js'];
 var testfiles = ['test/**/*.js'];
@@ -15,7 +16,12 @@ gulp.task('lint', function() {
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('test', ['lint'], function() {
+gulp.task('jscs', function() {
+  return gulp.src(jsfiles)
+  .pipe(jscs());
+});
+
+gulp.task('test', ['lint', 'jscs'], function() {
   gulp.src(testfiles)
   .pipe(lab());
 });

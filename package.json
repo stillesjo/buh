@@ -27,6 +27,7 @@
   "devDependencies": {
     "code": "^1.5.0",
     "gulp": "^3.9.0",
+    "gulp-jscs": "^2.0.0",
     "gulp-jshint": "^1.11.2",
     "gulp-lab": "^1.0.5",
     "gulp-watch": "^4.3.5",
