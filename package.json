@@ -34,7 +34,8 @@
     "jscs": "^2.1.1",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
-    "lab": "^5.16.0"
+    "lab": "^5.16.0",
+    "expect.js": "^0.3.1"
   },
   "bin": {
     "buh": "bin/buh.js"

@@ -2,4 +2,6 @@
 
 'use strict';
 
-require('../')(console.log);
+require('../')(function(log) {
+  console.log("prefix: " + log)
+});
