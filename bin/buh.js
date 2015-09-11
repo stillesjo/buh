@@ -3,5 +3,5 @@
 'use strict';
 
 require('../')(function(log) {
-  console.log("prefix: " + log)
+  console.log('prefix: ' + log);
 });

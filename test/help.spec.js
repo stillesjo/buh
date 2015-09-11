@@ -1,4 +1,4 @@
-//var assert = require('assert');
+'use strict';
 var expect = require('expect.js');
 
 var help = require('../lib/commands/help');
@@ -10,4 +10,4 @@ describe('Help', function() {
       expect(logText.length).to.be.greaterThan(0);
     });
   });
-})
+});

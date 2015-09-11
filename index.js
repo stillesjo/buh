@@ -5,7 +5,6 @@ var argv = require('minimist')(process.argv.slice(2));
 var mout = require('mout');
 var request = require('request');
 
-var config = require('./lib/config');
 var commands = require('./lib/commands');
 
 process.env.INIT_CWD = process.cwd();
