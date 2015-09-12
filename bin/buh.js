@@ -2,4 +2,6 @@
 
 'use strict';
 
-require('../')();
+var api = require('../lib/api/')(require('request'));
+
+require('../')(console.log, api);
