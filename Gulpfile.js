@@ -8,11 +8,10 @@ var jscs = require('gulp-jscs');
 var mocha = require('gulp-mocha');
 var cover = require('gulp-coverage');
 
-var ignoredFiles = ['!Gulpfile.js','!node_modules/**/*.js'];
+var ignoredFiles = ['!Gulpfile.js','!node_modules/**/*.js', '!debug/*'];
 var jsfiles = ['**/*.js'].concat(ignoredFiles);
 var testfiles = ['test/**/*.js'].concat(ignoredFiles);
 var sourceFiles = jsfiles.concat(['!test/**/*.js']);
-
 
 function ErrorHandler(err) {
   console.log(err);
@@ -53,11 +52,10 @@ gulp.task('watch', ['test'], function() {
   }));
 });
 gulp.task('watch-no-lints', ['exec-test'], function() {
-  watch('**/*.js', batch(function(events, done) {
+  watch(jsfiles, batch(function(events, done) {
     gulp.start('exec-test', done)
     .on('error', ErrorHandler);
   }));
 });
-
 
 gulp.task('default', ['watch']);

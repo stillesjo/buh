@@ -13,33 +13,33 @@ var searchInputWithHelpArg = {_: searchInput._, help: true};
 describe('search', function() {
   describe('searching function', function() {
     it ('should take keywords', function() {
-      search({get: function(searchString) {
-        expect(searchString.url)
+      search({search: function(query) {
+        expect(query)
           .to.contain(searchInput._[0]);
-        expect(searchString.url)
+        expect(query)
           .to.not.contain(searchInputWithUserArg.user);
-        expect(searchString.url)
+        expect(query)
           .to.not.contain(searchInputWithLanguageArg.language);
       },
       }, searchInput, null);
     });
     it ('should take --user flag', function() {
-      search({get: function(searchString) {
-        expect(searchString.url)
+      search({search: function(query) {
+        expect(query)
           .to.contain(searchInput._[0]);
-        expect(searchString.url)
+        expect(query)
           .to.contain(searchInputWithUserArg.user);
-        expect(searchString.url)
+        expect(query)
           .to.not.contain(searchInputWithLanguageArg.language);
       },}, searchInputWithUserArg, null);
     });
     it ('should take --language flag', function() {
-      search({get: function(searchString) {
-        expect(searchString.url)
+      search({search: function(query) {
+        expect(query)
           .to.contain(searchInput._[0]);
-        expect(searchString.url)
+        expect(query)
           .to.not.contain(searchInputWithUserArg.user);
-        expect(searchString.url)
+        expect(query)
           .to.contain(searchInputWithLanguageArg.language);
       },}, searchInputWithLanguageArg, null);
     });
