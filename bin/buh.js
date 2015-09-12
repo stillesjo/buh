@@ -4,6 +4,4 @@
 
 var api = require('../lib/api/')(require('request'));
 
-require('../')(function(log) {
-  console.log('prefix: ' + log);
-}, api);
+require('../')(console.log, api);
