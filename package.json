@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && lab -cv",
-    "lint": "jshint lib index.js --reporter node_modules/jshint-stylish --exclude node_modules && jscs index.js lib bin test"
+    "test": "npm run test-lint && npm run test-mocha",
+    "test-mocha": "mocha",
+    "test-lint": "jshint lib index.js --reporter node_modules/jshint-stylish --exclude node_modules && jscs index.js lib bin test"
   },
   "repository": {
     "type": "git",
@@ -36,8 +37,7 @@
     "gulp-watch": "^4.3.5",
     "jscs": "^2.1.1",
     "jshint": "^2.8.0",
-    "jshint-stylish": "^2.0.1",
-    "lab": "^5.16.0"
+    "jshint-stylish": "^2.0.1"
   },
   "bin": {
     "buh": "bin/buh.js"
