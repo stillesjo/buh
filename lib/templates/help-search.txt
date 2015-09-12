@@ -1,0 +1,9 @@
+Usage: buh search [<options>]
+
+Options:
+
+  --user <username>       Filter on certain user
+  --language <language>   Filter on certain language.
+
+  
+
