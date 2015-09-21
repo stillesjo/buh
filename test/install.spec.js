@@ -23,16 +23,16 @@ describe('install', function() {
         .to.throwException(/TESTEXCEPTION/);
     });
     it ('should combine repository to a repository url', function() {
-      install( { clone:
+      install({ clone:
         function(url) {
           expect(url).to.equal(expectedUriHttps);
-        }}, installGithubRepository, undefined);
+        },}, installGithubRepository, undefined);
     });
     it ('should use ssh-url when ssh-flag is on', function() {
       install({ clone:
               function(url) {
         expect(url).to.equal(expectedUriGit);
-      }}, installGithubRepositorySsh, undefined);
+      },}, installGithubRepositorySsh, undefined);
     });
   });
   describe('install help', function() {
