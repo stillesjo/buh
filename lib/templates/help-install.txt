@@ -5,6 +5,5 @@ Options:
   path                    Path where the repo will be installed/cloned
   --user <username>       Filter on certain user
   --language <language>   Filter on certain language.
-
-  
+  --ssh                   Install via ssh (git)
 
