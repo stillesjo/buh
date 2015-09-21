@@ -13,14 +13,11 @@ var installGithubRepository = {_: [repoName]};
 var installGithubRepositorySsh = {_: [repoName], ssh: true };
 var installGithubRepositoryPath = {_: [repoName, temporaryPath] };
 
-var throwingApi = { clone: function() {
-  throw 'TESTEXCEPTION';
-},};
 
 describe('install', function() {
   describe('feature', function() {
     it ('should run api method', function() {
-      expect(install).withArgs(throwingApi,
+      expect(install).withArgs({ clone: helper.throwingMethod },
         installGithubRepository, undefined)
         .to.throwException(/TESTEXCEPTION/);
     });
