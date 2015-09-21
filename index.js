@@ -2,6 +2,7 @@
 'use strict';
 
 var argv = require('minimist')(process.argv.slice(2));
+var logger = require('./lib/logger')('index.js');
 var mout = require('mout');
 
 var commands = require('./lib/commands');
@@ -14,6 +15,7 @@ function help(out) {
 }
 
 var run = function(out, api) {
+  logger.debug(argv);
   if (argv._ && argv._.length > 0) {
     var commandName = argv._.shift();
     if (mout.object.has(commands, commandName)) {
