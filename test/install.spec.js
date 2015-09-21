@@ -37,7 +37,9 @@ describe('install', function() {
       },}, installGithubRepositorySsh, undefined);
     });
     it ('should handle a path', function() {
-      install({ clone: function() { return null; },},
+      install({ clone: function() {
+        return null;
+      },},
               installGithubRepositoryPath, function(log) {
                 expect(log).to.contain(temporaryPath);
               });
