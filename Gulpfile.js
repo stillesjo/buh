@@ -27,7 +27,10 @@ gulp.task('lint', function() {
 
 gulp.task('jscs', function() {
   return gulp.src(jsfiles)
-  .pipe(jscs())
+  .pipe(jscs().on('error', function(){
+    console.log('Errors..');
+    this.end();
+  }))
   .on('error', ErrorHandler);
 });
 
@@ -59,3 +62,10 @@ gulp.task('watch-no-lints', ['exec-test'], function() {
 });
 
 gulp.task('default', ['watch']);
+
+gulp.task('testing', ['jscs'],function() {
+  watch(jsfiles, batch(function(events, done) {
+    gulp.start('jscs', done)
+    .on('error', ErrorHandler);
+  }));
+});

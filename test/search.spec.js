@@ -2,7 +2,7 @@
 var expect = require('expect.js');
 
 var search = require('../lib/commands/search');
-
+var helper = require('./testhelper');
 
 // Setup data
 var searchInput = {_: ['keyword']};
@@ -49,7 +49,7 @@ describe('search', function() {
     it ('should return helptext', function() {
       search(null, searchInputWithHelpArg, function(searchString) {
         expect(searchString).to.be.a('string');
-        expect(searchString.length).to.be.greaterThan(0);
+        expect(searchString).to.equal(helper.getSearchHelp());
       });
     });
   });
