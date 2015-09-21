@@ -8,8 +8,10 @@ var repoName = 'stillesjo/buh';
 var gitSuffix = '.git';
 var expectedUriHttps = 'https://github.com/' + repoName + gitSuffix;
 var expectedUriGit = 'git@github.com:' + repoName + gitSuffix;
+var temporaryPath = 'verytemporarypath...';
 var installGithubRepository = {_: [repoName]};
 var installGithubRepositorySsh = {_: [repoName], ssh: true };
+var installGithubRepositoryPath = {_: [repoName, temporaryPath] };
 
 var throwingApi = { clone: function() {
   throw 'TESTEXCEPTION';
@@ -33,6 +35,12 @@ describe('install', function() {
               function(url) {
         expect(url).to.equal(expectedUriGit);
       },}, installGithubRepositorySsh, undefined);
+    });
+    it ('should handle a path', function() {
+      install({ clone: function() { return null; },},
+              installGithubRepositoryPath, function(log) {
+                expect(log).to.contain(temporaryPath);
+              });
     });
   });
   describe('install help', function() {
