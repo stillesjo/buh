@@ -17,7 +17,7 @@ describe('open', function() {
 
   describe('feature', function() {
     it ('should run api method open', function() {
-      expect(open).withArgs({open: helper.throwingMethod}, 
+      expect(open).withArgs({open: helper.throwingMethod},
                             openArgs, undefined)
                             .to.throwException(/TESTEXCEPTION/);
     });
