@@ -46,7 +46,7 @@ gulp.task('test', function() {
 
 
 gulp.task('watch', ['test', 'lint', 'jscs'], function() {
-  gulp.watch('**/*.js', ['test', 'lint', 'jscs'])
+  gulp.watch(['**/*.js', '!node_modules/**/*.js'], ['test', 'lint', 'jscs'])
   .on('error', function(event){
     console.log(event);
   });
