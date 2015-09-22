@@ -3,8 +3,10 @@ var expect = require('expect.js');
 var open = require('../lib/commands/open');
 var helper = require('./testhelper');
 var helpText = helper.getOpenHelp();
-
 var helpArgs = {_: [], help: true};
+var openArgs = {_: ['stillesjo/dotfiles']};
+var expectedUrl = 'https://github.com/stillesjo/dotfiles';
+
 
 describe('open', function() {
   it('should exist as command in commands', function() {
@@ -14,7 +16,16 @@ describe('open', function() {
   });
 
   describe('feature', function() {
-    it ('should do stuff');
+    it ('should run api method open', function() {
+      expect(open).withArgs({open: helper.throwingMethod}, 
+                            openArgs, undefined)
+                            .to.throwException(/TESTEXCEPTION/);
+    });
+    it ('should construct a valid url', function() {
+      open({open: function(openUrl) {
+        expect(openUrl).to.equal(expectedUrl);
+      },}, openArgs, function() {});
+    });
   });
 
   describe('help', function() {
