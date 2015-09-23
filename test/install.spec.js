@@ -3,7 +3,6 @@ var expect = require('expect.js');
 
 var install = require('../lib/commands/install');
 var helper = require('./testhelper');
-var installInputHelp = {help: true};
 var repoName = 'stillesjo/buh';
 var gitSuffix = '.git';
 var expectedUriHttps = 'https://github.com/' + repoName + gitSuffix;

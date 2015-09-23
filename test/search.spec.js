@@ -2,13 +2,11 @@
 var expect = require('expect.js');
 
 var search = require('../lib/commands/search');
-var helper = require('./testhelper');
 
 // Setup data
 var searchInput = {_: ['keyword']};
 var searchInputWithUserArg = {_: searchInput._, user: 'stillesjo'};
 var searchInputWithLanguageArg = {_: searchInput._, language: 'alexscript'};
-var searchInputWithHelpArg = {_: searchInput._, help: true};
 
 describe('search', function() {
   describe('searching function', function() {

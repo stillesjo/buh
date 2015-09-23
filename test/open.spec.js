@@ -2,8 +2,6 @@
 var expect = require('expect.js');
 var open = require('../lib/commands/open');
 var helper = require('./testhelper');
-var helpText = helper.getOpenHelp();
-var helpArgs = {_: [], help: true};
 var openArgs = {_: ['stillesjo/dotfiles']};
 var expectedUrl = 'https://github.com/stillesjo/dotfiles';
 
