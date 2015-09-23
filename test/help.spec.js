@@ -3,12 +3,14 @@ var expect = require('expect.js');
 
 var help = require('../lib/commands/help');
 var helper = require('./testhelper');
+var path = require('path');
+
+var helpPath = path.resolve('../lib/templates/help.txt');
 
 describe('Help', function() {
   it ('should log text when executed', function() {
-    help(undefined, {_: []}, function(logText) {
-      expect(logText).to.be.a('string');
-      expect(logText).to.equal(helper.getHelp());
-    });
+    help({getFileContent: function(path) {
+      expect(path).to.not.equal(helpPath);
+    },}, {_: []}, function() {});
   });
 });
