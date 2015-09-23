@@ -44,13 +44,4 @@ describe('search', function() {
       },}, searchInputWithLanguageArg, null);
     });
   });
-
-  describe('help function', function() {
-    it ('should return helptext', function() {
-      search(null, searchInputWithHelpArg, function(searchString) {
-        expect(searchString).to.be.a('string');
-        expect(searchString).to.equal(helper.getSearchHelp());
-      });
-    });
-  });
 });

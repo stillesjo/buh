@@ -9,23 +9,18 @@ var commands = require('./lib/commands');
 
 process.env.INIT_CWD = process.cwd();
 
-
-function help(out) {
-  mout.object.get(commands, 'help')(out);
-}
-
 var run = function(out, api) {
   logger.debug(argv);
-  if (argv._ && argv._.length > 0) {
+  if (argv._ && argv._.length > 0 && !argv.help) {
     var commandName = argv._.shift();
     if (mout.object.has(commands, commandName)) {
       mout.object.get(commands, commandName)(api, argv, out);
     } else {
-      help(out);
+      mout.object.get(commands, 'help')(api, argv, out);
     }
   } else { // No command was specified
     // Print help info
-    help(out);
+    mout.object.get(commands, 'help')(api, argv, out);
   }
 };
 module.exports = run;

@@ -42,13 +42,4 @@ describe('install', function() {
               });
     });
   });
-  describe('install help', function() {
-    it('should return helptext', function() {
-      install(null, installInputHelp, function(output) {
-        expect(output).to.not.be(undefined);
-        expect(output).to.be.a('string');
-        expect(output).to.equal(helper.getInstallHelp());
-      });
-    });
-  });
 });
