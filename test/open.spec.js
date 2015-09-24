@@ -5,6 +5,7 @@ var helper = require('./testhelper');
 var openArgs = {_: ['stillesjo/dotfiles']};
 var expectedUrl = 'https://github.com/stillesjo/dotfiles';
 var openArgsNoRepo = {_: []};
+var openArgsWithBrowser = {_: ['stillesjo/dotfiles'], browser: 'firefox'};
 
 describe('open', function() {
   it('should exist as command in commands', function() {
@@ -20,8 +21,9 @@ describe('open', function() {
                             .to.throwException(/TESTEXCEPTION/);
     });
     it ('should construct a valid url', function() {
-      open({open: function(openUrl) {
+      open({open: function(openUrl, browser) {
         expect(openUrl).to.equal(expectedUrl);
+        expect(browser).to.be(undefined);
       },}, openArgs, function() {});
     });
     it ('should give error message when no repo specified', function() {
@@ -30,6 +32,11 @@ describe('open', function() {
       },}, openArgsNoRepo, function(logMessage) {
         expect(logMessage).to.be.ok();
       });
+    });
+    it ('should accept browser as argument', function() {
+      open({ open: function(url, browser) {
+        expect(browser).to.not.be(undefined);
+      },}, openArgsWithBrowser, function() {});
     });
   });
 });
