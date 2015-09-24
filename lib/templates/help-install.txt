@@ -6,4 +6,4 @@ Options:
   --ssh                   Install via ssh (git)
 
 Example:
-  buh install stillesjo/dotfiles clone --ssh
+  buh install stillesjo/dotfiles --ssh
