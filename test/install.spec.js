@@ -40,5 +40,12 @@ describe('install', function() {
                 expect(log).to.contain(temporaryPath);
               });
     });
+    it ('should not call api when no repo specified', function() {
+      install({ clone: function() {
+        expect().fail('Should not call clone function');
+      },}, {_: []}, function(log) {
+        expect(log).to.be.ok();
+      });
+    });
   });
 });
