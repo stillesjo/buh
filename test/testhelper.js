@@ -18,4 +18,10 @@ module.exports = {
   getHelp: function() {
     return fetch('../lib/templates/help.txt');
   },
+  getOpenHelp: function() {
+    return fetch('../lib/templates/help-open.txt');
+  },
+  throwingMethod: function() {
+    throw 'TESTEXCEPTION';
+  },
 };

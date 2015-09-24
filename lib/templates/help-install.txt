@@ -1,4 +1,4 @@
-Usage: buh install/clone [path] [<options>]
+Usage: buh install/clone <repository> [path] [<options>]
 
 Options:
 
