@@ -4,7 +4,7 @@ var open = require('../lib/commands/open');
 var helper = require('./testhelper');
 var openArgs = {_: ['stillesjo/dotfiles']};
 var expectedUrl = 'https://github.com/stillesjo/dotfiles';
-
+var openArgsNoRepo = {_: []};
 
 describe('open', function() {
   it('should exist as command in commands', function() {
@@ -23,6 +23,13 @@ describe('open', function() {
       open({open: function(openUrl) {
         expect(openUrl).to.equal(expectedUrl);
       },}, openArgs, function() {});
+    });
+    it ('should give error message when no repo specified', function() {
+      open({open: function(url) {
+        expect().fail('Should not run open on api. url:' + url);
+      },}, openArgsNoRepo, function(logMessage) {
+        expect(logMessage).to.be.ok();
+      });
     });
   });
 });
