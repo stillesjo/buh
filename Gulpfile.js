@@ -17,13 +17,13 @@ function ErrorHandler(err) {
 }
 
 gulp.task('lint', function() {
-  gulp.src(jsfiles)
+  return gulp.src(jsfiles)
   .pipe(jshint())
   .on('error', ErrorHandler)
   .pipe(jshint.reporter('default'));
 });
 
-gulp.task('jscs', function() {
+gulp.task('jscs', ['lint'], function() {
   return gulp.src(jsfiles)
   .pipe(jscs().on('error', function(){
     console.log('Errors..');
@@ -32,8 +32,8 @@ gulp.task('jscs', function() {
   .on('error', ErrorHandler);
 });
 
-gulp.task('test', function() {
-  gulp.src(testfiles)
+gulp.task('test', ['jscs'], function() {
+  return gulp.src(testfiles)
   .pipe(cover.instrument({
     pattern: sourceFiles,
   }))
