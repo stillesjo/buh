@@ -1,0 +1,9 @@
+Usage: buh install/clone <repository> [path] [<options>]
+
+Options:
+
+  path                    Path where the repo will be installed/cloned
+  --ssh                   Install via ssh (git)
+
+Example:
+  buh install stillesjo/dotfiles --ssh

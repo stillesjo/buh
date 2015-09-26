@@ -3,6 +3,8 @@ Usage: buh <command> [<args>] [<options>]
 Commands:
 
   help      Show this help text
-  search    Search for repository on github.
+  search    Search for repository.
+  install   Install repositories.
+  open      Open website for repositories.
   
 

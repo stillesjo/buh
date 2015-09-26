@@ -1,0 +1,8 @@
+Usage: buh open <repository> [<options>]
+
+Options:
+
+  --browser <browser>     Path where the repo will be installed/cloned
+
+Example:
+  buh open stillesjo/dotfiles --browser chrome
