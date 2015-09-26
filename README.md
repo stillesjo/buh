@@ -1,5 +1,7 @@
 # Buh
+
 [![Build Status](https://travis-ci.org/stillesjo/buh.svg?branch=master)](https://travis-ci.org/stillesjo/buh)
+
 ## What is Buh?
 Ever missed a command line tool to search and install/clone github repositories? Buh (hub backwards) aims to remedy this!
 
