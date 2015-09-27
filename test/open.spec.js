@@ -1,5 +1,5 @@
 'use strict';
-var expect = require('expect.js');
+var expect = require('chai').expect;
 var open = require('../lib/commands/open');
 var helper = require('./testhelper');
 var openArgs = {_: ['stillesjo/dotfiles']};
