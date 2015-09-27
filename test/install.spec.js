@@ -1,4 +1,5 @@
 'use strict';
+/*jshint -W030 */
 var expect = require('chai').expect;
 
 var install = require('../lib/commands/install');
@@ -16,9 +17,11 @@ var installGithubRepositoryPath = {_: [repoName, temporaryPath] };
 describe('install', function() {
   describe('feature', function() {
     it ('should run api method', function() {
-      expect(install).withArgs({ clone: helper.throwingMethod },
-        installGithubRepository, undefined)
-        .to.throwException(/TESTEXCEPTION/);
+
+      expect(function() {
+        install({ clone: helper.throwingMethod},
+                                  installGithubRepository, undefined);
+      }).to.throw(/TESTEXCEPTION/);
     });
     it ('should combine repository to a repository url', function() {
       install({ clone:
@@ -44,7 +47,7 @@ describe('install', function() {
       install({ clone: function() {
         expect().fail('Should not call clone function');
       },}, {_: []}, function(log) {
-        expect(log).to.be.ok();
+        expect(log).to.be.ok;
       });
     });
   });
