@@ -1,0 +1,7 @@
+Usage: buh travis <repository> [<options>]
+
+Options:
+
+  --branch <branch>       Filter branch.
+
+Example: buh travis stillesjo/buh
