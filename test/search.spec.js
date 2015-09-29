@@ -1,5 +1,5 @@
 'use strict';
-var expect = require('expect.js');
+var expect = require('chai').expect;
 
 var search = require('../lib/commands/search');
 
